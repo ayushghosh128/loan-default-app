@@ -10,7 +10,8 @@ from sklearn.model_selection import train_test_split
 def load_and_process_data():
     """Loads the dataset and performs all necessary preprocessing."""
     # 1. Load Data
-    df = pd.read_csv("../data/hmeq.csv")
+    # CORRECTED PATH: Relative to the project root
+    df = pd.read_csv("data/hmeq.csv")
 
     # 2. Handle Missing Values
     num_cols = df.select_dtypes(include=['float64','int64']).columns
@@ -127,4 +128,5 @@ else:
 
 # Optional: Add an expander to show the decision tree visualization
 with st.expander("Show Model Visualization"):
-    st.image("../outputs/tree_plot.png")
+    # CORRECTED PATH: Relative to the project root
+    st.image("outputs/tree_plot.png")
